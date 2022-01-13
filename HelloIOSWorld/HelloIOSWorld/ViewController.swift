@@ -25,7 +25,25 @@ class ViewController: UIViewController {
     }
     //MARK: Custom Actions
     @IBAction func changeGreeting(_ sender: UIButton) {
+        if let name = nameTextField.text {
+            if let age = ageTextField.text {
+                let message = "Hello \(name). You are \(age) years old"
+                resultLabel.text = message
+            }
+        }
+        
+        
+        
     }
     
+    @IBAction func dismisskeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func dismisskeypad(_ sender: Any) {
+        
+        ageTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
+    }
 }
 
